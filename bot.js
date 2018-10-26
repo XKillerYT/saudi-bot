@@ -111,4 +111,18 @@ client.on('ready', () => {
     }
     });
  
+client.on('message', message => {
+    if(message.content === '-support') {
+        message.channel.send('https://discord.gg/JCvAJf3');
+    }
+});
+
+client.on('guildCreate', guild => {
+  var embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription(`**شكراً لك لإضافه البوت الى سيرفرك**`)
+  .addField("** البرفكس الخاص بالبوت : `-` **")
+      guild.owner.send(embed)
+});
+
 client.login(process.env.BOT_TOKEN);
